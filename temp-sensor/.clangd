@@ -1,0 +1,31 @@
+CompileFlags:
+  Add:
+    - -std=c++20
+  Remove:
+    - -mfix-esp32-psram-cache-issue
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+
+Diagnostics:
+  Suppress:
+    - redefinition_different_typedef
+  ClangTidy:
+    Add:
+      - 'bugprone-*'
+      - 'misc-*'
+      - 'modernize-*'
+      - 'performance-*'
+      - 'readability-*'
+    Remove:
+      - 'readability-identifier-length'
+      - 'bugprone-easily-swappable-parameters'
+      - 'readability-qualified-auto'
+      - 'readability-braces-around-statements'
+      - 'readability-convert-member-functions-to-static'
+      - 'readability-static-accessed-through-instance'
+      - 'readability-magic-numbers'
+    CheckOptions:
+      readability-function-cognitive-complexity.Threshold: 60
+

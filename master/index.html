@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Master</title>
+    </head>
+    <body>
+        <h2>WiFi Options</h2>
+        <form action="/save-net" method="GET">
+            <div>
+                <select name="wifimode" required>
+                    <label>WiFi mode:</label>
+                    <option value="" disabled>select one</option>
+                    <option value="station" %WIFIMODE-STA%%>Station</option>
+                    <option value="softap" %WIFIMODE-SAP%%>Soft AP</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="ipmode" required>
+                    <label>IP mode:</label>
+                    <option value="" disabled>select one</option>
+                    <option value="dhcp" %IPMODE-DHCP%>DHCP</option>
+                    <option value="static" %IPMODE-STATIC%>static</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="input-ip">IP address:</label>
+                <input id="input-ip" name="ip" type="text" value="%IP%">
+            </div>
+
+            <div>
+                <label for="input-gw">Default gateway:</label>
+                <input id="input-gw" name="gw" type="text" value="%GW%">
+            </div>
+
+            <div>
+                <label for="input-mask">Network mask:</label>
+                <input id="input-mask" name="mask" type="text" value="%MASK%">
+            </div>
+
+            <button type="submit">
+                save
+            </button>
+        </form>
+
+
+    </body>
+</html>
